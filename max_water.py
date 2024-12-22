@@ -7,5 +7,5 @@ def max_water(l1):
     return max_area
     
 if __name__=="__main__":
-    l1=[1,8,6,2,15,6,8,9,10]
+    l1=[1,8,6,2,5,4,3,8,3]
     print(max_water(l1))
