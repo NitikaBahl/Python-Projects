@@ -61,6 +61,71 @@ def pattern(n):
             d+=1
         print()
 
+def increasingAlphabet(n):
+    for i in range (n):
+        for j in range(i+1):
+            print(chr(65+i),end=" ")
+        print()
+
+def decreasingAlphabet(n):
+    for i in range (n):
+        for j in range(n,0,-1):
+            print(chr(65+i),end=" ")
+        print()
+
+def alphabet_pyramid(n):
+    for i in range(1,n+1):
+        print(" " * (n-i),end="")
+        for j in range(1,i+1):
+            print(chr(64+j),end="")
+        for j in range(n-(n-i)-1,0,-1):
+            print(chr(64+j),end="")
+        print()  
+
+def alphabet_pattern(n):
+    for i in range(n):
+        for j in range(n-i,n):
+            print(chr(64+j),end=" ")
+        print()
+
+def valley2(n):
+    for i in range(1,n+1):
+        print("*"*i)
+        for j in range(1,2*(n-i)+1):
+            print(" ",end=" ")
+        print("*",end=" ")
+        print()
+
+def valley3(n):
+    for i in range(n):
+        for j in range(n-i):
+            print("*",end="")
+        for j in range(2*i):
+            print(" ",end="")
+        for j in range(n-i):
+            print("*",end="")
+        print()
+
+    for i in range(n-1):
+        for j in range(i+1):
+            print("*",end="")
+        for j in range(2*(n-i)-2):
+            print(" ",end="")
+        for j in range(i+1):
+            print("*",end="")
+        
+        print() 
+    
+def box(n):
+    for i in range(n): 
+        for j in range(n):
+            if i==1 or i==n-1 or j==1 or j==n-1:
+                print("*",end=" ")
+            else:
+                print(" ")
+                
+            print()
+
 if __name__=="__main__":
     
     print("1. Pyramid")
@@ -73,6 +138,13 @@ if __name__=="__main__":
     print("8. valley")
     print("9. Binary Triangle")
     print("10. pattern")
+    print("11. Increasing Alphabet")
+    print("12. Decreasing Alphabet")
+    print("13. Alphabet Pyramid")
+    print("14. Alphabet Pattern")
+    print("15. valley2")
+    print("16. valley3")
+    print("17. box")
     print("Your choice? ")
 
     choice=int(input())
@@ -107,6 +179,27 @@ if __name__=="__main__":
     
     elif choice==10:
         pattern(n)
+
+    elif choice==11:
+        increasingAlphabet(n)
+
+    elif choice==12:
+        decreasingAlphabet(n)
+
+    elif choice==13:
+        alphabet_pyramid(n)
+
+    elif choice==14:
+        alphabet_pattern(n)
+
+    elif choice==15:
+        valley2(n)
+
+    elif choice==16:
+        valley3(n)
+    
+    elif choice==17:
+        box(n)
 
     else:
         print("Invalid choice")  
